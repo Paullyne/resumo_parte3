@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3º ano – Material de Estudo</title>
+<style>
+:root{--ink:#14213d;--paper:#f6f7f9;--card:#fff;--acc:#0b6e6e;--hi:#fff2c7;--line:#d9dee7;--mut:#51607a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{display:grid;grid-template-columns:240px minmax(0,1fr);max-width:1080px;margin:0 auto;gap:2.5rem;padding:0 1.25rem}
+nav{position:sticky;top:0;align-self:start;padding:2rem 0;max-height:100vh;overflow:auto}
+nav b{display:block;font-family:Georgia,serif;font-size:1.1rem;margin-bottom:.8rem}
+nav a{display:block;color:var(--mut);text-decoration:none;padding:.25rem 0 .25rem .7rem;border-left:3px solid var(--line);font-size:.93rem}
+nav a:hover,nav a:focus-visible{color:var(--acc);border-color:var(--acc);outline:none}
+main{padding:2rem 0 4rem;max-width:70ch}
+h1{font:700 2.4rem/1.15 Georgia,serif;margin:0 0 .4rem}
+h2{font:700 1.6rem/1.25 Georgia,serif;margin:3rem 0 .8rem;padding-top:1.2rem;border-top:2px solid var(--ink)}
+h3{font-size:1.05rem;margin:1.6rem 0 .3rem;color:var(--acc)}
+.sub{color:var(--mut);margin:0 0 1rem}
+ul,ol{padding-left:1.3rem}li{margin:.25rem 0}
+.box{background:var(--hi);border-left:4px solid #c99a00;padding:.7rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin:1.2rem 0}
+.bits{display:flex;gap:.35rem;flex-wrap:wrap}
+.bit{width:3.1rem;border:2px solid var(--ink);background:#fff;border-radius:6px;padding:.3rem 0;text-align:center;cursor:pointer;font:inherit;color:var(--ink)}
+.bit small{display:block;font-size:.7rem;color:var(--mut)}
+.bit strong{font-size:1.3rem}
+.bit[aria-pressed=true]{background:var(--ink);color:#fff}
+.bit[aria-pressed=true] small{color:#c9d3e6}
+.res{margin-top:.8rem;font-size:1.1rem}
+input[type=number]{font:inherit;width:6rem;padding:.2rem .4rem;border:1px solid var(--line);border-radius:6px}
+.t{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left;vertical-align:top}th{background:#e9edf3}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.5rem 1rem;margin:.8rem 0}
+summary{cursor:pointer;font-weight:600}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+footer{color:var(--mut);font-size:.85rem;margin-top:3rem}
+@media(max-width:800px){.wrap{display:block}nav{position:static;padding:1rem 0 0;max-height:none}nav a{display:inline-block;border:0;padding:.2rem .5rem .2rem 0}h1{font-size:1.9rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+pre{background:#0f1b33;color:#e8eefc;padding:.8rem 1rem;border-radius:8px;overflow-x:auto;font-size:.85rem;line-height:1.5}
+code{font-family:Consolas,Menlo,monospace}p code,li code,td code{background:#e9edf3;padding:0 .3em;border-radius:4px;font-size:.88em}
+figure{margin:1.2rem 0;text-align:center}figure svg{max-width:100%;height:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+figcaption{font-size:.85rem;color:var(--mut);margin-top:.3rem}
+.q{border-left:4px solid var(--acc);background:var(--card);padding:.6rem 1rem;margin:1.2rem 0;border-radius:0 8px 8px 0}
+.t td.c{text-align:center}
+</style>
+<body>
+<div class="wrap">
+<nav aria-label="Índice"><b>3º ano</b>
+<a href="#redes">Redes de Computadores</a>
+<a href="#design">Design</a>
+<a href="#cms">Gerenciador de Conteúdo / BD</a>
+<a href="#php">Programação Web II</a>
+<a href="#labhw">Laboratório de Hardware</a>
+<a href="#labsw">Laboratório de Software</a>
+<a href="#labweb">Laboratório WEB</a>
+</nav>
+<main>
+<h1>Material de Estudo – 3º ano</h1>
+<p class="sub">Curso Técnico em Informática: teoria, exemplos e questões de treino</p>
+
+<h2 id="redes">1. Redes de Computadores</h2>
+<h3>Conceitos e topologias</h3>
+<p><b>LAN</b> (local), <b>MAN</b> (metropolitana) e <b>WAN</b> (longa distância). No modelo <b>cliente/servidor</b>, o cliente pede um serviço (ex.: o navegador) e o servidor responde (ex.: o site). <b>Topologia</b> é a forma como os dispositivos se ligam:</p>
+<figure><svg viewBox="0 0 640 170" role="img" aria-label="Topologias: barramento, estrela, anel e malha"><g stroke="#14213d" stroke-width="2" fill="#0b6e6e">
+<line x1="20" y1="60" x2="140" y2="60"/><line x1="40" y1="60" x2="40" y2="100"/><line x1="80" y1="60" x2="80" y2="100"/><line x1="120" y1="60" x2="120" y2="100"/><circle cx="40" cy="105" r="8"/><circle cx="80" cy="105" r="8"/><circle cx="120" cy="105" r="8"/>
+<line x1="240" y1="70" x2="215" y2="30"/><line x1="240" y1="70" x2="265" y2="30"/><line x1="240" y1="70" x2="215" y2="110"/><line x1="240" y1="70" x2="265" y2="110"/><circle cx="240" cy="70" r="10" fill="#c99a00"/><circle cx="215" cy="30" r="8"/><circle cx="265" cy="30" r="8"/><circle cx="215" cy="110" r="8"/><circle cx="265" cy="110" r="8"/>
+<circle cx="390" cy="70" r="40" fill="none"/><circle cx="390" cy="30" r="8"/><circle cx="430" cy="70" r="8"/><circle cx="390" cy="110" r="8"/><circle cx="350" cy="70" r="8"/>
+<line x1="520" y1="30" x2="600" y2="30"/><line x1="520" y1="30" x2="520" y2="110"/><line x1="600" y1="30" x2="600" y2="110"/><line x1="520" y1="110" x2="600" y2="110"/><line x1="520" y1="30" x2="600" y2="110"/><line x1="600" y1="30" x2="520" y2="110"/><circle cx="520" cy="30" r="8"/><circle cx="600" cy="30" r="8"/><circle cx="520" cy="110" r="8"/><circle cx="600" cy="110" r="8"/></g>
+<g font-size="13" text-anchor="middle" fill="#14213d"><text x="80" y="150">Barramento</text><text x="240" y="150">Estrela</text><text x="390" y="150">Anel</text><text x="560" y="150">Malha</text></g></svg><figcaption>As quatro topologias básicas.</figcaption></figure>
+<ul><li><b>Barramento:</b> um cabo único; barato, mas uma falha no cabo derruba a rede.</li><li><b>Estrela:</b> tudo ligado a um switch central; a mais usada hoje; fácil de manter, mas depende do ponto central.</li><li><b>Anel:</b> cada máquina liga à próxima, formando um círculo.</li><li><b>Malha:</b> vários caminhos entre os nós; alta confiabilidade e custo maior.</li></ul>
+<h3>Meios e equipamentos</h3>
+<div class="t"><table><tr><th>Item</th><th>Função</th></tr>
+<tr><td>Cabo UTP (par trançado)</td><td>Cobre; o mais comum em redes locais (até 100 m por lance)</td></tr>
+<tr><td>Fibra óptica</td><td>Transmite luz; alta velocidade, longas distâncias, imune a interferência elétrica</td></tr>
+<tr><td>Wi-Fi</td><td>Transmissão por rádio, sem cabos</td></tr>
+<tr><td>Placa de rede</td><td>Conecta o computador à rede</td></tr>
+<tr><td>Hub</td><td>Repete o sinal para todas as portas (simples, gera colisões)</td></tr>
+<tr><td>Switch</td><td>Envia os dados só à porta do destinatário (mais eficiente)</td></tr>
+<tr><td>Roteador</td><td>Liga redes diferentes (ex.: rede local e Internet) e escolhe o caminho dos pacotes</td></tr>
+<tr><td>Access point</td><td>Cria o ponto de acesso Wi-Fi para a rede cabeada</td></tr></table></div>
+<h3>Modelos OSI e TCP/IP</h3>
+<div class="t"><table><tr><th>OSI (7 camadas)</th><th>TCP/IP (4 camadas)</th><th>Exemplos</th></tr>
+<tr><td>7 Aplicação<br>6 Apresentação<br>5 Sessão</td><td>Aplicação</td><td>HTTP, FTP, SMTP, DNS</td></tr>
+<tr><td>4 Transporte</td><td>Transporte</td><td>TCP, UDP</td></tr>
+<tr><td>3 Rede</td><td>Internet</td><td>IP, roteador</td></tr>
+<tr><td>2 Enlace<br>1 Física</td><td>Acesso à rede</td><td>Ethernet, switch, cabos, Wi-Fi</td></tr></table></div>
+<p>Macete (de cima para baixo): <b>A</b>plicação, <b>A</b>presentação, <b>S</b>essão, <b>T</b>ransporte, <b>R</b>ede, <b>E</b>nlace, <b>F</b>ísica.</p>
+<h3>Endereçamento e serviços</h3>
+<ul><li><b>Endereço IP:</b> identifica o dispositivo (ex.: 192.168.1.10).</li><li><b>Máscara de sub-rede:</b> separa a parte da rede da parte do dispositivo (ex.: 255.255.255.0, ou /24).</li><li><b>Gateway:</b> a “saída” da rede, em geral o roteador (ex.: 192.168.1.1).</li><li><b>DNS:</b> traduz nomes em IPs (www.site.com → 203.0.113.5).</li><li><b>DHCP:</b> distribui IPs automaticamente aos dispositivos.</li></ul>
+<h3>Protocolos</h3>
+<div class="t"><table><tr><th>Protocolo</th><th>Uso</th></tr>
+<tr><td>HTTP / HTTPS</td><td>Páginas web (HTTPS é criptografado). Portas 80 e 443</td></tr>
+<tr><td>FTP</td><td>Transferência de arquivos (porta 21)</td></tr>
+<tr><td>SMTP</td><td>Envio de e-mail (porta 25)</td></tr>
+<tr><td>TCP</td><td>Transporte confiável: confirma a entrega e reenvia o que se perdeu</td></tr>
+<tr><td>UDP</td><td>Transporte rápido, sem confirmação (vídeo ao vivo, jogos)</td></tr>
+<tr><td>IP</td><td>Endereça e encaminha pacotes entre redes</td></tr></table></div>
+<h3>Cabeamento e crimpagem</h3>
+<p>O conector <b>RJ-45</b> recebe os 8 fios do cabo UTP, na ordem de um dos padrões:</p>
+<figure><svg viewBox="0 0 640 150" role="img" aria-label="Ordem dos fios nos padrões T568A e T568B"><g font-size="12" fill="#14213d">
+<text x="5" y="18" font-weight="700">T568A</text><text x="5" y="88" font-weight="700">T568B</text></g>
+<g stroke="#14213d">
+</g><defs>
+<pattern id="s1" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#fff"/><rect width="5" height="10" fill="#2e9e44"/></pattern>
+<pattern id="s2" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#fff"/><rect width="5" height="10" fill="#f28c28"/></pattern>
+<pattern id="s3" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#fff"/><rect width="5" height="10" fill="#2a64c8"/></pattern>
+<pattern id="s4" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#fff"/><rect width="5" height="10" fill="#7a4a24"/></pattern></defs>
+<g stroke="#14213d" stroke-width="1.5">
+<rect x="70" y="5" width="60" height="40" fill="url(#s1)"/><rect x="135" y="5" width="60" height="40" fill="#2e9e44"/><rect x="200" y="5" width="60" height="40" fill="url(#s2)"/><rect x="265" y="5" width="60" height="40" fill="#2a64c8"/><rect x="330" y="5" width="60" height="40" fill="url(#s3)"/><rect x="395" y="5" width="60" height="40" fill="#f28c28"/><rect x="460" y="5" width="60" height="40" fill="url(#s4)"/><rect x="525" y="5" width="60" height="40" fill="#7a4a24"/>
+<rect x="70" y="75" width="60" height="40" fill="url(#s2)"/><rect x="135" y="75" width="60" height="40" fill="#f28c28"/><rect x="200" y="75" width="60" height="40" fill="url(#s1)"/><rect x="265" y="75" width="60" height="40" fill="#2a64c8"/><rect x="330" y="75" width="60" height="40" fill="url(#s3)"/><rect x="395" y="75" width="60" height="40" fill="#2e9e44"/><rect x="460" y="75" width="60" height="40" fill="url(#s4)"/><rect x="525" y="75" width="60" height="40" fill="#7a4a24"/></g>
+<g font-size="12" fill="#14213d" text-anchor="middle"><text x="100" y="62">1</text><text x="165" y="62">2</text><text x="230" y="62">3</text><text x="295" y="62">4</text><text x="360" y="62">5</text><text x="425" y="62">6</text><text x="490" y="62">7</text><text x="555" y="62">8</text><text x="320" y="140">Listrado = branco/cor; sólido = cor. Pinos 1 a 8 com a trava do conector para baixo.</text></g></svg><figcaption>Ordem dos fios (pinos 1 a 8). Listrado = branco com a cor.</figcaption></figure>
+<ul><li><b>T568A:</b> branco/verde, verde, branco/laranja, azul, branco/azul, laranja, branco/marrom, marrom.</li><li><b>T568B:</b> branco/laranja, laranja, branco/verde, azul, branco/azul, verde, branco/marrom, marrom.</li><li><b>Cabo direto:</b> mesmo padrão nas duas pontas (liga computador a switch/roteador).</li><li><b>Crossover:</b> A numa ponta e B na outra (liga dois equipamentos iguais, como PC com PC).</li></ul>
+<p><b>Crimpar:</b> 1) desencape cerca de 2 cm da capa; 2) separe os pares e alinhe os fios na ordem escolhida; 3) corte as pontas rente; 4) insira até o fundo no RJ-45 (os fios devem encostar na ponta); 5) crimpe com o alicate; 6) repita na outra ponta; 7) teste no <b>testador de cabos</b>: as 8 luzes acendem em sequência nas duas unidades.</p>
+<h3>Provedor, manutenção e diagnóstico</h3>
+<p>A conexão com o <b>ISP</b> pode ser por <b>fibra</b>, <b>cabo</b>, <b>rádio</b> ou <b>redes móveis</b> (4G/5G).</p>
+<p><b>Isolar por camadas</b> (de baixo para cima): 1) cabo conectado e luzes do equipamento acesas? 2) <code>ipconfig</code> (Windows) ou <code>ip a</code> (Linux) mostram IP válido? 3) <code>ping 192.168.1.1</code> responde (gateway)? 4) <code>ping 8.8.8.8</code> responde (Internet)? 5) <code>ping www.site.com</code> responde (DNS)? Onde o teste falhar, está o problema.</p>
+<p><b>Configurar IP manualmente (Windows):</b> Configurações de rede → propriedades do adaptador → IPv4 → informe IP, máscara, gateway e DNS.</p>
+<div class="q"><b>Questão de treino 10.</b> Qual serviço traduz nomes de sites em IPs? a) DHCP b) DNS c) FTP d) SMTP<details><summary>Ver resposta</summary><b>b) DNS.</b></details></div>
+
+<h2 id="design">2. Design</h2>
+<h3>Imagem digital</h3>
+<p><b>Pixel</b> é o menor ponto de uma imagem; <b>resolução</b> é a quantidade de pixels (ex.: 1920 × 1080).</p>
+<div class="t"><table><tr><th></th><th>Bitmap (matricial)</th><th>Vetor</th></tr><tr><td>Formação</td><td>Grade de pixels</td><td>Fórmulas matemáticas (pontos, linhas, curvas)</td></tr><tr><td>Ao ampliar</td><td>Perde qualidade (serrilhado)</td><td>Não perde</td></tr><tr><td>Formatos</td><td>JPG, PNG, GIF</td><td>SVG</td></tr><tr><td>Ideal para</td><td>Fotografias</td><td>Logotipos, ícones, ilustrações</td></tr></table></div>
+<p><b>Modos de cor:</b> <b>RGB</b> (vermelho, verde e azul; luz, usado em telas) × <b>CMYK</b> (ciano, magenta, amarelo e preto; tinta, usado em impressão).</p>
+<h3>Teoria das cores, tipografia e composição</h3>
+<ul><li><b>Círculo cromático:</b> organiza as cores. <b>Complementares</b> ficam opostas (azul e laranja) e geram forte contraste; <b>análogas</b> ficam vizinhas (azul, ciano, verde) e geram harmonia.</li><li><b>Contraste:</b> diferença entre texto e fundo; garante leitura (importante para acessibilidade).</li><li><b>Tipografia:</b> fontes <b>com serifa</b> (têm “pezinhos”, ex.: Times, Georgia) × <b>sem serifa</b> (ex.: Arial, Verdana). <b>Hierarquia</b>: títulos maiores e mais fortes que o texto.</li><li><b>Composição e grid:</b> o grid (grade de colunas) alinha os elementos; a regra dos terços divide o quadro em 3 × 3 e posiciona o foco nas interseções.</li></ul>
+<h3>Edição e exportação</h3>
+<p>Em editores como GIMP ou Photoshop: <b>camadas</b> (elementos sobrepostos editáveis separadamente), <b>seleção e recorte</b>, <b>filtros</b> e <b>retoques</b> (brilho, contraste, saturação, clone).</p>
+<ul><li><b>JPG:</b> fotografias; compacta bem, mas não tem transparência.</li><li><b>PNG:</b> transparência e nitidez (logotipos, capturas de tela).</li><li><b>GIF:</b> animações simples, até 256 cores.</li><li><b>Otimização:</b> reduza as dimensões ao tamanho de exibição e ajuste a qualidade; arquivos leves carregam mais rápido.</li></ul>
+<h3>Wireframe, protótipo e leiaute</h3>
+<p><b>Wireframe</b> é o esboço da estrutura da página, sem cores nem imagens finais. <b>Protótipo interativo</b> simula a navegação (ex.: Figma). <b>Leiaute</b> é a versão visual com cores, fontes e imagens.</p>
+<figure><svg viewBox="0 0 320 230" role="img" aria-label="Wireframe de uma página"><g fill="#fff" stroke="#14213d" stroke-width="2"><rect x="5" y="5" width="310" height="220"/><rect x="15" y="15" width="290" height="28"/><rect x="15" y="50" width="290" height="22"/><rect x="15" y="80" width="190" height="90"/><rect x="215" y="80" width="90" height="90"/><rect x="15" y="180" width="290" height="35"/></g>
+<g font-size="12" fill="#14213d" text-anchor="middle"><text x="160" y="34">Cabeçalho / logotipo</text><text x="160" y="65">Menu de navegação</text><text x="110" y="128">Conteúdo principal</text><text x="260" y="128">Lateral</text><text x="160" y="202">Rodapé</text></g></svg><figcaption>Wireframe de uma página.</figcaption></figure>
+<div class="q"><b>Questão de treino 11.</b> Qual modo de cor é adequado para telas? a) CMYK b) RGB c) Escala de cinza d) Pantone<details><summary>Ver resposta</summary><b>b) RGB.</b></details></div>
+
+<h2 id="cms">3. Gerenciador de Conteúdo / Banco de Dados</h2>
+<h3>Hospedagem, domínio e publicação</h3>
+<ul><li><b>Hospedagem compartilhada:</b> vários sites no mesmo servidor; barata, desempenho limitado.</li><li><b>VPS:</b> parte dedicada de um servidor, com mais controle.</li><li><b>Nuvem:</b> recursos escaláveis, pagos por uso.</li><li><b>Domínio:</b> o nome do site (ex.: minhaescola.com.br), registrado e renovado periodicamente (no Brasil, o .br é registrado em registro.br).</li><li><b>Publicação:</b> envio dos arquivos ao servidor por <b>FTP</b> (ex.: FileZilla) ou pelo painel da hospedagem.</li></ul>
+<h3>CMS e WordPress</h3>
+<p><b>CMS</b> permite criar e gerir sites sem programar tudo do zero. <b>Instalação do WordPress:</b> 1) crie um banco de dados e um usuário; 2) envie os arquivos ao servidor; 3) acesse o endereço do site e preencha os dados do banco; 4) crie o administrador. Depois, entre em <code>/wp-admin</code>.</p>
+<ul><li><b>Temas (templates):</b> definem a aparência (Aparência → Temas).</li><li><b>Plugins:</b> acrescentam funções (formulários, SEO, segurança).</li><li><b>Páginas</b> (conteúdo fixo: Sobre, Contato) × <b>posts</b> (conteúdo em ordem cronológica, com categorias: notícias, blog).</li><li><b>Customização:</b> logotipo, cores, menus e widgets.</li></ul>
+<h3>phpMyAdmin, backup e SQL</h3>
+<p>O <b>phpMyAdmin</b> é uma interface web para gerir o MySQL: criar bancos e tabelas, executar SQL, <b>importar</b> e <b>exportar</b> (aba Exportar gera um arquivo .sql, o <b>backup</b>; para <b>restaurar</b>, use Importar). Faça backup do banco <b>e</b> dos arquivos do site.</p>
+<pre><code>CREATE TABLE alunos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(80) NOT NULL,
+  nota DECIMAL(4,2)
+);
+INSERT INTO alunos (nome, nota) VALUES ('Ana', 8.5), ('Bruno', 6.0);
+SELECT * FROM alunos;
+SELECT nome FROM alunos WHERE nota &gt;= 7 ORDER BY nome;
+UPDATE alunos SET nota = 7.0 WHERE id = 2;
+DELETE FROM alunos WHERE id = 2;</code></pre>
+<p><code>WHERE</code> filtra linhas; <code>ORDER BY</code> ordena. <b>Cuidado:</b> UPDATE ou DELETE sem WHERE afeta a tabela inteira.</p>
+<div class="q"><b>Questão de treino 12.</b> Qual comando consulta registros? a) INSERT b) UPDATE c) SELECT d) DELETE<details><summary>Ver resposta</summary><b>c) SELECT.</b></details></div>
+
+<h2 id="php">4. Programação Web II (PHP / MySQL)</h2>
+<h3>Front-end, back-end e APIs</h3>
+<p>O <b>back-end local</b> roda no computador do desenvolvedor (ex.: XAMPP); o <b>remoto</b>, em um servidor na Internet. O front-end conversa com o back-end por <b>APIs web</b>:</p>
+<ul><li><b>REST:</b> usa os métodos HTTP (GET, POST, PUT, DELETE) e, geralmente, <b>JSON</b>.</li><li><b>SOAP:</b> protocolo mais rígido, usa <b>XML</b>.</li></ul>
+<pre><code>// Resposta JSON de GET /api/alunos/1
+{ "id": 1, "nome": "Ana", "nota": 8.5 }
+
+// No front-end
+fetch("/api/alunos/1").then(r =&gt; r.json()).then(a =&gt; console.log(a.nome));</code></pre>
+<p><b>Funções</b> em PHP reaproveitam código: <code>function media($a, $b) { return ($a + $b) / 2; }</code>. Procedimentos executam ações sem devolver valor.</p>
+<h3>Sessões e cookies</h3>
+<ul><li><b>Sessão</b> (<code>session_start()</code>, <code>$_SESSION</code>): dados guardados <b>no servidor</b>; mais segura (o navegador guarda só o identificador).</li><li><b>Cookie:</b> dados guardados <b>no navegador</b>; podem ser lidos e alterados pelo usuário.</li></ul>
+<pre><code>&lt;?php // login.php
+session_start();
+$con = new mysqli("localhost","root","","escola");
+$st = $con-&gt;prepare("SELECT id, senha FROM usuarios WHERE email = ?");
+$st-&gt;bind_param("s", $_POST["email"]);
+$st-&gt;execute();
+$u = $st-&gt;get_result()-&gt;fetch_assoc();
+if ($u &amp;&amp; password_verify($_POST["senha"], $u["senha"])) {
+    $_SESSION["usuario_id"] = $u["id"];
+    header("Location: painel.php"); exit;
+}
+echo "E-mail ou senha incorretos.";
+
+// painel.php (página protegida)
+session_start();
+if (!isset($_SESSION["usuario_id"])) { header("Location: login.php"); exit; }</code></pre>
+<p>Guarde senhas com <code>password_hash()</code> e confira com <code>password_verify()</code>, nunca em texto puro.</p>
+<h3>CRUD</h3>
+<div class="t"><table><tr><th>Operação</th><th>SQL</th><th>Exemplo de uso</th></tr><tr><td>Create</td><td>INSERT</td><td>Cadastrar aluno</td></tr><tr><td>Read</td><td>SELECT</td><td>Listar alunos</td></tr><tr><td>Update</td><td>UPDATE</td><td>Editar a nota</td></tr><tr><td>Delete</td><td>DELETE</td><td>Excluir aluno</td></tr></table></div>
+<pre><code>// Update e Delete com consultas parametrizadas
+$st = $con-&gt;prepare("UPDATE alunos SET nome = ?, nota = ? WHERE id = ?");
+$st-&gt;bind_param("sdi", $nome, $nota, $id);   // s = texto, d = decimal, i = inteiro
+$st-&gt;execute();
+
+$st = $con-&gt;prepare("DELETE FROM alunos WHERE id = ?");
+$st-&gt;bind_param("i", $id);
+$st-&gt;execute();</code></pre>
+<h3>SQL Injection</h3>
+<p>Ataque em que comandos SQL são inseridos num campo do formulário. Código <b>vulnerável</b>: <code>"SELECT * FROM usuarios WHERE email = '$email'"</code>. Se o atacante digitar <code>' OR '1'='1</code>, a condição vira sempre verdadeira e ele entra sem senha. Com <b>consulta parametrizada</b>, o valor é tratado só como dado, nunca como comando.</p>
+<div class="q"><b>Questão de treino 13.</b> A melhor prevenção contra SQL Injection é: a) concatenar o texto direto no SQL b) usar consultas parametrizadas c) esconder o formulário d) usar apenas cookies<details><summary>Ver resposta</summary><b>b) consultas parametrizadas.</b></details></div>
+
+<h2 id="labhw">5. Laboratório de Hardware</h2>
+<h3>Segurança e ferramentas</h3>
+<ul><li><b>Desligue</b> o equipamento e <b>desconecte da tomada</b> antes de abrir.</li><li>Use <b>pulseira antiestática</b> presa a uma parte metálica do gabinete (aterramento) para evitar a <b>descarga eletrostática (ESD)</b>, que pode queimar componentes sem sinal visível.</li><li>Mantenha a bancada organizada, seca e iluminada; guarde parafusos em recipiente.</li><li><b>Ferramentas:</b> chaves de fenda e Phillips, alicate, multímetro.</li></ul>
+<h3>Multímetro: fonte e continuidade</h3>
+<p>Com a fonte ligada à rede (e ao pino PS-ON em verde, no teste fora do PC), meça com o multímetro em tensão contínua (V DC): vermelho = +5 V, laranja = +3,3 V, amarelo = +12 V, em relação ao preto (terra). A norma ATX admite variação de cerca de ±5%:</p>
+<div class="t"><table><tr><th>Fio</th><th>Nominal</th><th>Faixa aceitável</th></tr><tr><td>Laranja</td><td>3,3 V</td><td>3,14 a 3,47 V</td></tr><tr><td>Vermelho</td><td>5 V</td><td>4,75 a 5,25 V</td></tr><tr><td>Amarelo</td><td>12 V</td><td>11,4 a 12,6 V</td></tr></table></div>
+<p><b>Continuidade:</b> desligado e sem energia, coloque as ponteiras nas duas pontas do cabo; o bipe indica fio íntegro.</p>
+<h3>Montagem, desmontagem e diagnóstico</h3>
+<ul><li><b>Memória:</b> alinhe o chanfro do pente com o slot e pressione até os clipes travarem.</li><li><b>Placas (PCIe):</b> encaixe no slot e prenda com parafuso no gabinete.</li><li><b>Discos:</b> fixe na baia, ligue cabo de dados (SATA) e de energia; M.2 vai direto na placa-mãe.</li><li><b>Desmontagem:</b> ordem inversa; tire fotos dos cabos antes de soltar.</li></ul>
+<p><b>Diagnóstico:</b> o <b>POST</b> (Power-On Self Test) é o autoteste feito ao ligar. Se falhar, a placa emite <b>beeps</b> (o significado varia conforme o fabricante da BIOS, consulte o manual). Verifique também <b>luzes</b> e <b>conectores soltos</b>. O <b>teste por troca de peças</b> substitui uma peça suspeita por outra sabidamente boa; se o defeito some, a peça trocada era a causa. Troque <b>uma de cada vez</b>.</p>
+<div class="q"><b>Questão de treino 14.</b> Qual item protege contra eletricidade estática? a) chave Phillips b) pulseira antiestática c) alicate d) cooler<details><summary>Ver resposta</summary><b>b) pulseira antiestática.</b></details></div>
+
+<h2 id="labsw">6. Laboratório de Software</h2>
+<h3>Backup, imagem e recuperação</h3>
+<ul><li><b>Backup completo:</b> copia tudo. <b>Incremental:</b> copia só o que mudou desde o último backup (qualquer tipo). <b>Diferencial:</b> copia o que mudou desde o último completo.</li><li><b>Imagem do sistema:</b> cópia exata da partição (SO, programas e configurações) que permite restaurar a máquina inteira.</li><li><b>Recuperação de desastres:</b> mídia de recuperação, pontos de restauração e cópias externas (regra 3-2-1: 3 cópias, 2 mídias, 1 fora do local).</li><li><b>Sistema de arquivos:</b> <code>chkdsk /f</code> (Windows) e <code>fsck</code> (Linux) verificam e corrigem erros. Também: atualizações, desinstalação de programas e <b>diretivas de segurança</b> (regras de senha, bloqueio de conta).</li></ul>
+<p><b>Máquina virtual:</b> crie a VM, aponte a ISO, instale o sistema e use <i>snapshots</i> para voltar a um estado anterior.</p>
+<h3>Linha de comando</h3>
+<div class="t"><table><tr><th>Tarefa</th><th>Linux</th><th>Windows</th></tr>
+<tr><td>Mostrar pasta atual</td><td><code>pwd</code></td><td><code>cd</code></td></tr>
+<tr><td>Listar arquivos</td><td><code>ls</code></td><td><code>dir</code></td></tr>
+<tr><td>Entrar em pasta</td><td><code>cd pasta</code></td><td><code>cd pasta</code></td></tr>
+<tr><td>Criar pasta</td><td><code>mkdir docs</code></td><td><code>mkdir docs</code></td></tr>
+<tr><td>Copiar</td><td><code>cp a.txt b.txt</code></td><td><code>copy a.txt b.txt</code></td></tr>
+<tr><td>Mover / renomear</td><td><code>mv a.txt c.txt</code></td><td><code>move a.txt c.txt</code></td></tr>
+<tr><td>Apagar</td><td><code>rm a.txt</code></td><td><code>del a.txt</code></td></tr></table></div>
+<ul><li><b>Pipe</b> (<code>|</code>): a saída de um comando vira entrada do próximo. <code>ls | more</code></li><li><b>Redirecionamento:</b> <code>&gt;</code> grava (substitui o arquivo), <code>&gt;&gt;</code> acrescenta ao final, <code>&lt;</code> lê de um arquivo.</li><li><b>Filtros:</b> <code>grep "ana" lista.txt</code> (busca linhas), <code>sort</code> (ordena), <code>more</code> (página por página).</li></ul>
+<pre><code>cat nomes.txt | sort &gt; ordenado.txt    # ordena e grava no arquivo
+grep "erro" log.txt &gt;&gt; erros.txt      # acrescenta as linhas com "erro"
+chmod 755 script.sh                  # dono: rwx; grupo e outros: r-x</code></pre>
+<p><b>Permissões:</b> <b>r</b> leitura (4), <b>w</b> escrita (2), <b>x</b> execução (1), somadas para dono, grupo e outros. <code>755</code> = 7 (rwx) + 5 (r-x) + 5 (r-x).</p>
+<p><b>Scripts em lote:</b></p>
+<pre><code>:: backup.bat (Windows)
+@echo off
+xcopy C:\Dados D:\Backup /E /Y
+echo Backup concluido
+
+#!/bin/bash   # backup.sh (Linux): chmod +x backup.sh e ./backup.sh
+cp -r ~/Dados /mnt/backup
+echo "Backup concluido"</code></pre>
+<div class="q"><b>Questão de treino 15.</b> O que faz <code>cat nomes.txt | sort &gt; ordenado.txt</code>? a) apaga nomes.txt b) ordena nomes.txt e grava em ordenado.txt c) copia sem alterar d) lista os arquivos<details><summary>Ver resposta</summary><b>b).</b> O <code>cat</code> lê o arquivo, o pipe envia ao <code>sort</code>, e o <code>&gt;</code> grava o resultado.</details></div>
+
+<h2 id="labweb">7. Laboratório WEB (projeto integrador)</h2>
+<h3>Planejamento</h3>
+<p>O <b>levantamento de requisitos</b> define o que o sistema deve fazer (funcionais: cadastrar, logar; não funcionais: ser rápido, seguro). As <b>fases</b>: análise → design → desenvolvimento → testes → implantação. O <b>cronograma</b> distribui as tarefas no tempo, com responsáveis.</p>
+<div class="t"><table><tr><th>Fase</th><th>Semana</th><th>Entrega</th></tr><tr><td>Análise</td><td>1</td><td>Requisitos e wireframes</td></tr><tr><td>Design</td><td>2</td><td>Leiaute e modelo do banco</td></tr><tr><td>Desenvolvimento</td><td>3 a 5</td><td>Front-end, back-end e banco</td></tr><tr><td>Testes</td><td>6</td><td>Correção de erros</td></tr><tr><td>Implantação</td><td>7</td><td>Publicação e apresentação</td></tr></table></div>
+<h3>Metodologias</h3>
+<ul><li><b>Cascata:</b> fases em sequência, cada uma só começa quando a anterior termina; indicada quando os requisitos são estáveis.</li><li><b>Scrum (ágil):</b> trabalho em ciclos curtos, as <b>sprints</b> (1 a 4 semanas), cada uma entregando uma parte funcional. Papéis: <i>Product Owner</i> (define prioridades), <i>Scrum Master</i> (facilita o processo) e equipe. Usa o <i>backlog</i> (lista de tarefas) e reuniões diárias curtas.</li><li><b>Kanban:</b> quadro visual com colunas (A fazer, Fazendo, Feito) e limite de tarefas em andamento.</li></ul>
+<h3>Ferramentas</h3>
+<ul><li><b>Git/GitHub:</b> controle de versão e trabalho em equipe.</li><li><b>Trello:</b> quadro de tarefas (Kanban).</li><li><b>Editor de código:</b> ex.: VS Code.</li><li><b>XAMPP:</b> servidor local com Apache, MySQL e PHP; os arquivos ficam na pasta <code>htdocs</code>, acessados em <code>http://localhost/projeto</code>.</li></ul>
+<pre><code>git init
+git add .
+git commit -m "Cadastro de alunos funcionando"
+git branch -M main
+git remote add origin https://github.com/usuario/projeto.git
+git push -u origin main</code></pre>
+<p>Escolha linguagens e ambiente pelo projeto (ex.: HTML/CSS/JavaScript no front-end, PHP no back-end, MySQL no banco) e <b>integre</b> as camadas: o formulário (front-end) envia dados ao PHP (back-end), que grava e lê do MySQL. Em grupo, divida tarefas por afinidade, faça commits pequenos e reuniões curtas.</p>
+<div class="q"><b>Questão de treino 16.</b> Qual metodologia organiza o trabalho em sprints? a) Cascata b) Scrum c) Teste de mesa d) Wireframe<details><summary>Ver resposta</summary><b>b) Scrum.</b></details></div>
+<footer>Material didático – Curso Técnico em Informática, 3º ano.</footer>
+</main></div>
+</body></html>
